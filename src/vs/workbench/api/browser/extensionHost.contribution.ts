@@ -71,7 +71,7 @@ import './mainThreadTask';
 import './mainThreadLabelService';
 import './mainThreadTunnelService';
 import './mainThreadAuthentication';
-import './mainThreadTimeline';
+// import './mainThreadTimeline';
 import './mainThreadTesting';
 import './mainThreadSecretState';
 

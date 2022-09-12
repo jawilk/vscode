@@ -158,6 +158,6 @@ declare module 'vscode' {
 		 * @param provider A timeline provider.
 		 * @return A {@link Disposable} that unregisters this provider when being disposed.
 		*/
-		export function registerTimelineProvider(scheme: string | string[], provider: TimelineProvider): Disposable;
+		// export function registerTimelineProvider(scheme: string | string[], provider: TimelineProvider): Disposable;
 	}
 }
