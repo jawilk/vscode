@@ -35,17 +35,11 @@ const compilations = [
 	'configuration-editing/tsconfig.json',
 	'debug-auto-launch/tsconfig.json',
 	'debug-server-ready/tsconfig.json',
-	'emmet/tsconfig.json',
 	'extension-editing/tsconfig.json',
-	'image-preview/tsconfig.json',
 	'npm/tsconfig.json',
 	'search-result/tsconfig.json',
 	'references-view/tsconfig.json',
 	'simple-browser/tsconfig.json',
-	'vscode-api-tests/tsconfig.json',
-	'vscode-colorize-tests/tsconfig.json',
-	'vscode-notebook-tests/tsconfig.json',
-	'vscode-test-resolver/tsconfig.json'
 ];
 
 const getBaseUrl = out => `https://ticino.blob.core.windows.net/sourcemaps/${commit}/${out}`;

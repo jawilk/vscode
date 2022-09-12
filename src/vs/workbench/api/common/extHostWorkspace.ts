@@ -7,14 +7,15 @@ import { delta as arrayDelta, mapArrayOrNot } from 'vs/base/common/arrays';
 import { Barrier } from 'vs/base/common/async';
 import { CancellationToken } from 'vs/base/common/cancellation';
 import { Emitter, Event } from 'vs/base/common/event';
-import { toDisposable } from 'vs/base/common/lifecycle';
+// import { toDisposable } from 'vs/base/common/lifecycle';
 import { TernarySearchTree } from 'vs/base/common/map';
 import { Schemas } from 'vs/base/common/network';
 import { Counter } from 'vs/base/common/numbers';
 import { basename, basenameOrAuthority, dirname, ExtUri, relativePath } from 'vs/base/common/resources';
 import { compare } from 'vs/base/common/strings';
 import { withUndefinedAsNull } from 'vs/base/common/types';
-import { URI, UriComponents } from 'vs/base/common/uri';
+import { URI } from 'vs/base/common/uri';
+// import { URI, UriComponents } from 'vs/base/common/uri';
 import { localize } from 'vs/nls';
 import { ExtensionIdentifier, IExtensionDescription } from 'vs/platform/extensions/common/extensions';
 import { FileSystemProviderCapabilities } from 'vs/platform/files/common/files';
@@ -184,13 +185,13 @@ export class ExtHostWorkspace implements ExtHostWorkspaceShape, IExtHostWorkspac
 	private readonly _proxy: MainThreadWorkspaceShape;
 	private readonly _messageService: MainThreadMessageServiceShape;
 	private readonly _extHostFileSystemInfo: IExtHostFileSystemInfo;
-	private readonly _uriTransformerService: IURITransformerService;
+	// private readonly _uriTransformerService: IURITransformerService;
 
 	private readonly _activeSearchCallbacks: ((match: IRawFileMatch2) => any)[] = [];
 
 	private _trusted: boolean = false;
 
-	private readonly _editSessionIdentityProviders = new Map<string, vscode.EditSessionIdentityProvider>();
+	// private readonly _editSessionIdentityProviders = new Map<string, vscode.EditSessionIdentityProvider>();
 
 	constructor(
 		@IExtHostRpcService extHostRpc: IExtHostRpcService,
@@ -201,7 +202,7 @@ export class ExtHostWorkspace implements ExtHostWorkspaceShape, IExtHostWorkspac
 	) {
 		this._logService = logService;
 		this._extHostFileSystemInfo = extHostFileSystemInfo;
-		this._uriTransformerService = uriTransformerService;
+		// this._uriTransformerService = uriTransformerService;
 		this._requestIdProvider = new Counter();
 		this._barrier = new Barrier();
 
@@ -583,50 +584,50 @@ export class ExtHostWorkspace implements ExtHostWorkspaceShape, IExtHostWorkspac
 
 	// --- edit sessions ---
 
-	private _providerHandlePool = 0;
+	// private _providerHandlePool = 0;
 
 	// called by ext host
-	registerEditSessionIdentityProvider(scheme: string, provider: vscode.EditSessionIdentityProvider) {
-		if (this._editSessionIdentityProviders.has(scheme)) {
-			throw new Error(`A provider has already been registered for scheme ${scheme}`);
-		}
+	// registerEditSessionIdentityProvider(scheme: string, provider: vscode.EditSessionIdentityProvider) {
+	// 	if (this._editSessionIdentityProviders.has(scheme)) {
+	// 		throw new Error(`A provider has already been registered for scheme ${scheme}`);
+	// 	}
 
-		this._editSessionIdentityProviders.set(scheme, provider);
-		const outgoingScheme = this._uriTransformerService.transformOutgoingScheme(scheme);
-		const handle = this._providerHandlePool++;
-		this._proxy.$registerEditSessionIdentityProvider(handle, outgoingScheme);
+	// 	this._editSessionIdentityProviders.set(scheme, provider);
+	// 	const outgoingScheme = this._uriTransformerService.transformOutgoingScheme(scheme);
+	// 	const handle = this._providerHandlePool++;
+	// 	this._proxy.$registerEditSessionIdentityProvider(handle, outgoingScheme);
 
-		return toDisposable(() => {
-			this._editSessionIdentityProviders.delete(scheme);
-			this._proxy.$unregisterEditSessionIdentityProvider(handle);
-		});
-	}
+	// 	return toDisposable(() => {
+	// 		this._editSessionIdentityProviders.delete(scheme);
+	// 		this._proxy.$unregisterEditSessionIdentityProvider(handle);
+	// 	});
+	// }
 
 	// called by main thread
-	async $getEditSessionIdentifier(workspaceFolder: UriComponents, cancellationToken: CancellationToken): Promise<string | undefined> {
-		this._logService.info('Getting edit session identifier for workspaceFolder', workspaceFolder);
-		const folder = await this.resolveWorkspaceFolder(URI.revive(workspaceFolder));
-		if (!folder) {
-			this._logService.warn('Unable to resolve workspace folder');
-			return undefined;
-		}
+	// async $getEditSessionIdentifier(workspaceFolder: UriComponents, cancellationToken: CancellationToken): Promise<string | undefined> {
+	// 	this._logService.info('Getting edit session identifier for workspaceFolder', workspaceFolder);
+	// 	const folder = await this.resolveWorkspaceFolder(URI.revive(workspaceFolder));
+	// 	if (!folder) {
+	// 		this._logService.warn('Unable to resolve workspace folder');
+	// 		return undefined;
+	// 	}
 
-		this._logService.info('Invoking #provideEditSessionIdentity for workspaceFolder', folder);
+	// 	this._logService.info('Invoking #provideEditSessionIdentity for workspaceFolder', folder);
 
-		const provider = this._editSessionIdentityProviders.get(folder.uri.scheme);
-		this._logService.info(`Provider for scheme ${folder.uri.scheme} is defined: `, !!provider);
-		if (!provider) {
-			return undefined;
-		}
+	// 	const provider = this._editSessionIdentityProviders.get(folder.uri.scheme);
+	// 	this._logService.info(`Provider for scheme ${folder.uri.scheme} is defined: `, !!provider);
+	// 	if (!provider) {
+	// 		return undefined;
+	// 	}
 
-		const result = await provider.provideEditSessionIdentity(folder, cancellationToken);
-		this._logService.info('Provider returned edit session identifier: ', result);
-		if (!result) {
-			return undefined;
-		}
+	// 	const result = await provider.provideEditSessionIdentity(folder, cancellationToken);
+	// 	this._logService.info('Provider returned edit session identifier: ', result);
+	// 	if (!result) {
+	// 		return undefined;
+	// 	}
 
-		return result;
-	}
+	// 	return result;
+	// }
 }
 
 export const IExtHostWorkspace = createDecorator<IExtHostWorkspace>('IExtHostWorkspace');

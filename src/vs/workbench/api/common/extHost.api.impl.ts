@@ -35,7 +35,7 @@ import { ExtHostMessageService } from 'vs/workbench/api/common/extHostMessageSer
 import { IExtHostOutputService } from 'vs/workbench/api/common/extHostOutput';
 import { ExtHostProgress } from 'vs/workbench/api/common/extHostProgress';
 import { createExtHostQuickOpen } from 'vs/workbench/api/common/extHostQuickOpen';
-import { ExtHostSCM } from 'vs/workbench/api/common/extHostSCM';
+//import { ExtHostSCM } from 'vs/workbench/api/common/extHostSCM';
 import { ExtHostStatusBar } from 'vs/workbench/api/common/extHostStatusBar';
 import { IExtHostStorage } from 'vs/workbench/api/common/extHostStorage';
 import { IExtHostTerminalService } from 'vs/workbench/api/common/extHostTerminalService';
@@ -171,7 +171,7 @@ export function createApiFactoryAndRegisterActors(accessor: ServicesAccessor): I
 	const extHostFileSystem = rpcProtocol.set(ExtHostContext.ExtHostFileSystem, new ExtHostFileSystem(rpcProtocol, extHostLanguageFeatures));
 	const extHostFileSystemEvent = rpcProtocol.set(ExtHostContext.ExtHostFileSystemEventService, new ExtHostFileSystemEventService(rpcProtocol, extHostLogService, extHostDocumentsAndEditors));
 	const extHostQuickOpen = rpcProtocol.set(ExtHostContext.ExtHostQuickOpen, createExtHostQuickOpen(rpcProtocol, extHostWorkspace, extHostCommands));
-	const extHostSCM = rpcProtocol.set(ExtHostContext.ExtHostSCM, new ExtHostSCM(rpcProtocol, extHostCommands, extHostLogService));
+	//const extHostSCM = rpcProtocol.set(ExtHostContext.ExtHostSCM, new ExtHostSCM(rpcProtocol, extHostCommands, extHostLogService));
 	const extHostComment = rpcProtocol.set(ExtHostContext.ExtHostComments, createExtHostComments(rpcProtocol, extHostCommands, extHostDocuments));
 	const extHostProgress = rpcProtocol.set(ExtHostContext.ExtHostProgress, new ExtHostProgress(rpcProtocol.getProxy(MainContext.MainThreadProgress)));
 	const extHostLabelService = rpcProtocol.set(ExtHostContext.ExtHosLabelService, new ExtHostLabelService(rpcProtocol));
@@ -1038,24 +1038,24 @@ export function createApiFactoryAndRegisterActors(accessor: ServicesAccessor): I
 			onDidGrantWorkspaceTrust: (listener, thisArgs?, disposables?) => {
 				return extHostWorkspace.onDidGrantWorkspaceTrust(listener, thisArgs, disposables);
 			},
-			registerEditSessionIdentityProvider: (scheme: string, provider: vscode.EditSessionIdentityProvider) => {
-				checkProposedApiEnabled(extension, 'editSessionIdentityProvider');
-				return extHostWorkspace.registerEditSessionIdentityProvider(scheme, provider);
-			}
+			// registerEditSessionIdentityProvider: (scheme: string, provider: vscode.EditSessionIdentityProvider) => {
+			// 	checkProposedApiEnabled(extension, 'editSessionIdentityProvider');
+			// 	return extHostWorkspace.registerEditSessionIdentityProvider(scheme, provider);
+			// }
 		};
 
 		// namespace: scm
-		const scm: typeof vscode.scm = {
-			get inputBox() {
-				extHostApiDeprecation.report('scm.inputBox', extension,
-					`Use 'SourceControl.inputBox' instead`);
+		// const scm: typeof vscode.scm = {
+		// 	get inputBox() {
+		// 		extHostApiDeprecation.report('scm.inputBox', extension,
+		// 			`Use 'SourceControl.inputBox' instead`);
 
-				return extHostSCM.getLastInputBox(extension)!; // Strict null override - Deprecated api
-			},
-			createSourceControl(id: string, label: string, rootUri?: vscode.Uri) {
-				return extHostSCM.createSourceControl(extension, id, label, rootUri);
-			}
-		};
+		// 		return extHostSCM.getLastInputBox(extension)!; // Strict null override - Deprecated api
+		// 	},
+		// 	createSourceControl(id: string, label: string, rootUri?: vscode.Uri) {
+		// 		return extHostSCM.createSourceControl(extension, id, label, rootUri);
+		// 	}
+		// };
 
 		// namespace: comments
 		const comments: typeof vscode.comments = {
@@ -1174,7 +1174,7 @@ export function createApiFactoryAndRegisterActors(accessor: ServicesAccessor): I
 			extensions,
 			languages,
 			notebooks,
-			scm,
+			//scm,
 			tasks,
 			tests,
 			window,

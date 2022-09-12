@@ -1084,8 +1084,8 @@ export interface MainThreadWorkspaceShape extends IDisposable {
 	$updateWorkspaceFolders(extensionName: string, index: number, deleteCount: number, workspaceFoldersToAdd: { uri: UriComponents; name?: string }[]): Promise<void>;
 	$resolveProxy(url: string): Promise<string | undefined>;
 	$requestWorkspaceTrust(options?: WorkspaceTrustRequestOptions): Promise<boolean | undefined>;
-	$registerEditSessionIdentityProvider(handle: number, scheme: string): void;
-	$unregisterEditSessionIdentityProvider(handle: number): void;
+	//$registerEditSessionIdentityProvider(handle: number, scheme: string): void;
+	//$unregisterEditSessionIdentityProvider(handle: number): void;
 }
 
 export interface IFileChangeDto {
@@ -1422,7 +1422,7 @@ export interface ExtHostWorkspaceShape {
 	$acceptWorkspaceData(workspace: IWorkspaceData | null): void;
 	$handleTextSearchResult(result: search.IRawFileMatch2, requestId: number): void;
 	$onDidGrantWorkspaceTrust(): void;
-	$getEditSessionIdentifier(folder: UriComponents, token: CancellationToken): Promise<string | undefined>;
+	// $getEditSessionIdentifier(folder: UriComponents, token: CancellationToken): Promise<string | undefined>;
 }
 
 export interface ExtHostFileSystemInfoShape {
@@ -2299,7 +2299,7 @@ export const MainContext = {
 	MainThreadWorkspace: createProxyIdentifier<MainThreadWorkspaceShape>('MainThreadWorkspace'),
 	MainThreadFileSystem: createProxyIdentifier<MainThreadFileSystemShape>('MainThreadFileSystem'),
 	MainThreadExtensionService: createProxyIdentifier<MainThreadExtensionServiceShape>('MainThreadExtensionService'),
-	MainThreadSCM: createProxyIdentifier<MainThreadSCMShape>('MainThreadSCM'),
+	//MainThreadSCM: createProxyIdentifier<MainThreadSCMShape>('MainThreadSCM'),
 	MainThreadSearch: createProxyIdentifier<MainThreadSearchShape>('MainThreadSearch'),
 	MainThreadTask: createProxyIdentifier<MainThreadTaskShape>('MainThreadTask'),
 	MainThreadWindow: createProxyIdentifier<MainThreadWindowShape>('MainThreadWindow'),
@@ -2337,7 +2337,7 @@ export const ExtHostContext = {
 	ExtHostExtensionService: createProxyIdentifier<ExtHostExtensionServiceShape>('ExtHostExtensionService'),
 	ExtHostLogLevelServiceShape: createProxyIdentifier<ExtHostLogLevelServiceShape>('ExtHostLogLevelServiceShape'),
 	ExtHostTerminalService: createProxyIdentifier<ExtHostTerminalServiceShape>('ExtHostTerminalService'),
-	ExtHostSCM: createProxyIdentifier<ExtHostSCMShape>('ExtHostSCM'),
+	//ExtHostSCM: createProxyIdentifier<ExtHostSCMShape>('ExtHostSCM'),
 	ExtHostSearch: createProxyIdentifier<ExtHostSearchShape>('ExtHostSearch'),
 	ExtHostTask: createProxyIdentifier<ExtHostTaskShape>('ExtHostTask'),
 	ExtHostWorkspace: createProxyIdentifier<ExtHostWorkspaceShape>('ExtHostWorkspace'),

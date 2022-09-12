@@ -438,11 +438,11 @@ const newCommands: ApiCommand[] = [
 		ApiCommandResult.Void
 	),
 	// --- continue edit session
-	new ApiCommand(
-		'vscode.experimental.editSession.continue', '_workbench.experimental.editSessions.actions.continueEditSession', 'Continue the current edit session in a different workspace',
-		[ApiCommandArgument.Uri.with('workspaceUri', 'The target workspace to continue the current edit session in')],
-		ApiCommandResult.Void
-	)
+	// new ApiCommand(
+	// 	'vscode.experimental.editSession.continue', '_workbench.experimental.editSessions.actions.continueEditSession', 'Continue the current edit session in a different workspace',
+	// 	[ApiCommandArgument.Uri.with('workspaceUri', 'The target workspace to continue the current edit session in')],
+	// 	ApiCommandResult.Void
+	// )
 ];
 
 //#endregion

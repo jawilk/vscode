@@ -54,7 +54,7 @@ import 'vs/workbench/browser/parts/views/viewsService';
 
 import 'vs/platform/actions/common/actions.contribution';
 import 'vs/platform/undoRedo/common/undoRedoService';
-import 'vs/workbench/services/workspaces/common/editSessionIdentityService';
+//import 'vs/workbench/services/workspaces/common/editSessionIdentityService';
 import 'vs/workbench/services/extensions/browser/extensionUrlHandler';
 import 'vs/workbench/services/keybinding/common/keybindingEditing';
 import 'vs/workbench/services/decorations/browser/decorationsService';
@@ -198,7 +198,7 @@ import 'vs/workbench/contrib/searchEditor/browser/searchEditor.contribution';
 import 'vs/workbench/contrib/sash/browser/sash.contribution';
 
 // SCM
-import 'vs/workbench/contrib/scm/browser/scm.contribution';
+//import 'vs/workbench/contrib/scm/browser/scm.contribution';
 
 // Debug
 import 'vs/workbench/contrib/debug/browser/debug.contribution';
@@ -322,7 +322,7 @@ import 'vs/workbench/contrib/userDataSync/browser/userDataSync.contribution';
 import 'vs/workbench/contrib/userDataProfile/browser/userDataProfile.contribution';
 
 // Continue Edit Session
-import 'vs/workbench/contrib/editSessions/browser/editSessions.contribution';
+//import 'vs/workbench/contrib/editSessions/browser/editSessions.contribution';
 
 // Code Actions
 import 'vs/workbench/contrib/codeActions/browser/codeActions.contribution';

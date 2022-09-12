@@ -14,7 +14,7 @@ declare module 'vscode' {
 		 * @param provider A provider which can convert URIs for workspace folders of scheme @param scheme to
 		 * an edit session identifier which is stable across machines. This enables edit sessions to be resolved.
 		 */
-		export function registerEditSessionIdentityProvider(scheme: string, provider: EditSessionIdentityProvider): Disposable;
+		//export function registerEditSessionIdentityProvider(scheme: string, provider: EditSessionIdentityProvider): Disposable;
 	}
 
 	export interface EditSessionIdentityProvider {

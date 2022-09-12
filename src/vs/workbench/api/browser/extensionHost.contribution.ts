@@ -47,7 +47,7 @@ import './mainThreadProgress';
 import './mainThreadQuickOpen';
 import './mainThreadRemoteConnectionData';
 import './mainThreadSaveParticipant';
-import './mainThreadSCM';
+//import './mainThreadSCM';
 import './mainThreadSearch';
 import './mainThreadStatusBar';
 import './mainThreadStorage';
