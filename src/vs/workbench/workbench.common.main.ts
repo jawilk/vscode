@@ -173,7 +173,7 @@ import 'vs/workbench/contrib/interactive/browser/interactive.contribution';
 import 'vs/workbench/contrib/testing/browser/testing.contribution';
 
 // Logs
-import 'vs/workbench/contrib/logs/common/logs.contribution';
+// import 'vs/workbench/contrib/logs/common/logs.contribution';
 
 // Quickaccess
 import 'vs/workbench/contrib/quickaccess/browser/quickAccess.contribution';
