@@ -150,7 +150,7 @@ registerSingleton(IExtensionsProfileScannerService, ExtensionsProfileScannerServ
 //#region --- workbench contributions
 
 // Telemetry
-import 'vs/workbench/contrib/telemetry/browser/telemetry.contribution';
+// import 'vs/workbench/contrib/telemetry/browser/telemetry.contribution';
 
 // Preferences
 import 'vs/workbench/contrib/preferences/browser/preferences.contribution';
@@ -212,7 +212,7 @@ import 'vs/workbench/contrib/debug/browser/debugViewlet';
 import 'vs/workbench/contrib/markers/browser/markers.contribution';
 
 // Merge Editor
-import 'vs/workbench/contrib/mergeEditor/browser/mergeEditor.contribution';
+// import 'vs/workbench/contrib/mergeEditor/browser/mergeEditor.contribution';
 
 // Comments
 import 'vs/workbench/contrib/comments/browser/comments.contribution';
@@ -255,7 +255,7 @@ import 'vs/workbench/contrib/remote/common/remote.contribution';
 import 'vs/workbench/contrib/remote/browser/remote.contribution';
 
 // Emmet
-import 'vs/workbench/contrib/emmet/browser/emmet.contribution';
+// import 'vs/workbench/contrib/emmet/browser/emmet.contribution';
 
 // CodeEditor Contributions
 import 'vs/workbench/contrib/codeEditor/browser/codeEditor.contribution';
@@ -264,7 +264,7 @@ import 'vs/workbench/contrib/codeEditor/browser/codeEditor.contribution';
 import 'vs/workbench/contrib/keybindings/browser/keybindings.contribution';
 
 // Snippets
-import 'vs/workbench/contrib/snippets/browser/snippets.contribution';
+// import 'vs/workbench/contrib/snippets/browser/snippets.contribution';
 
 // Formatter Help
 import 'vs/workbench/contrib/format/browser/format.contribution';
@@ -313,7 +313,7 @@ import 'vs/workbench/contrib/languageStatus/browser/languageStatus.contribution'
 import 'vs/workbench/contrib/experiments/browser/experiments.contribution';
 
 // Send a Smile
-import 'vs/workbench/contrib/feedback/browser/feedback.contribution';
+// import 'vs/workbench/contrib/feedback/browser/feedback.contribution';
 
 // User Data Sync
 import 'vs/workbench/contrib/userDataSync/browser/userDataSync.contribution';
@@ -325,7 +325,7 @@ import 'vs/workbench/contrib/userDataProfile/browser/userDataProfile.contributio
 //import 'vs/workbench/contrib/editSessions/browser/editSessions.contribution';
 
 // Code Actions
-import 'vs/workbench/contrib/codeActions/browser/codeActions.contribution';
+// import 'vs/workbench/contrib/codeActions/browser/codeActions.contribution';
 
 // Timeline
 // import 'vs/workbench/contrib/timeline/browser/timeline.contribution';
@@ -343,12 +343,12 @@ import 'vs/workbench/contrib/workspaces/browser/workspaces.contribution';
 import 'vs/workbench/contrib/list/browser/list.contribution';
 
 // Audio Cues
-import 'vs/workbench/contrib/audioCues/browser/audioCues.contribution';
+// import 'vs/workbench/contrib/audioCues/browser/audioCues.contribution';
 
 // Deprecated Extension Migrator
 import 'vs/workbench/contrib/deprecatedExtensionMigrator/browser/deprecatedExtensionMigrator.contribution';
 
 // Bracket Pair Colorizer 2 Telemetry
-import 'vs/workbench/contrib/bracketPairColorizer2Telemetry/browser/bracketPairColorizer2Telemetry.contribution';
+// import 'vs/workbench/contrib/bracketPairColorizer2Telemetry/browser/bracketPairColorizer2Telemetry.contribution';
 
 //#endregion
