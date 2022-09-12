@@ -33,7 +33,7 @@ import { SuggestController } from 'vs/editor/contrib/suggest/browser/suggestCont
 import { AccessibilityHelpController } from 'vs/workbench/contrib/codeEditor/browser/accessibility/accessibility';
 import { MenuPreventer } from 'vs/workbench/contrib/codeEditor/browser/menuPreventer';
 import { SelectionClipboardContributionID } from 'vs/workbench/contrib/codeEditor/browser/selectionClipboard';
-import { TabCompletionController } from 'vs/workbench/contrib/snippets/browser/tabCompletion';
+// import { TabCompletionController } from 'vs/workbench/contrib/snippets/browser/tabCompletion';
 import { renderIcon } from 'vs/base/browser/ui/iconLabel/iconLabels';
 import * as editorCommon from 'vs/editor/common/editorCommon';
 import { ITextModelService } from 'vs/editor/common/services/resolverService';
@@ -81,7 +81,7 @@ export function getOptimizedNestedCodeEditorWidgetOptions(): ICodeEditorWidgetOp
 			ContextMenuController.ID,
 			SuggestController.ID,
 			SnippetController2.ID,
-			TabCompletionController.ID,
+			// TabCompletionController.ID,
 			AccessibilityHelpController.ID
 		])
 	};

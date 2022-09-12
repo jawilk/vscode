@@ -19,7 +19,7 @@ import { IContextKey, IContextKeyService, RawContextKey } from 'vs/platform/cont
 import { IInstantiationService, ServicesAccessor } from 'vs/platform/instantiation/common/instantiation';
 import { KeybindingWeight } from 'vs/platform/keybinding/common/keybindingsRegistry';
 import { Link } from 'vs/platform/opener/browser/link';
-import { AudioCue, IAudioCueService } from 'vs/workbench/contrib/audioCues/browser/audioCueService';
+// import { AudioCue, IAudioCueService } from 'vs/workbench/contrib/audioCues/browser/audioCueService';
 
 
 export class InlayHintsAccessibility implements IEditorContribution {
@@ -40,7 +40,7 @@ export class InlayHintsAccessibility implements IEditorContribution {
 	constructor(
 		private readonly _editor: ICodeEditor,
 		@IContextKeyService contextKeyService: IContextKeyService,
-		@IAudioCueService private readonly _audioCueService: IAudioCueService,
+		// @IAudioCueService private readonly _audioCueService: IAudioCueService,
 		@IInstantiationService private readonly _instaService: IInstantiationService,
 	) {
 		this._ariaElement = document.createElement('span');
@@ -156,7 +156,7 @@ export class InlayHintsAccessibility implements IEditorContribution {
 		const line = this._editor.getPosition().lineNumber;
 		const hints = InlayHintsController.get(this._editor)?.getInlayHintsForLine(line);
 		if (!hints || hints.length === 0) {
-			this._audioCueService.playAudioCue(AudioCue.noInlayHints);
+			// this._audioCueService.playAudioCue(AudioCue.noInlayHints);
 		} else {
 			this._read(line, hints);
 		}

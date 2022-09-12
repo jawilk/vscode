@@ -6,11 +6,11 @@
 import { IEditorOptions } from 'vs/editor/common/config/editorOptions';
 import { ICodeEditorWidgetOptions } from 'vs/editor/browser/widget/codeEditorWidget';
 import { ContextMenuController } from 'vs/editor/contrib/contextmenu/browser/contextmenu';
-import { SnippetController2 } from 'vs/editor/contrib/snippet/browser/snippetController2';
+// import { SnippetController2 } from 'vs/editor/contrib/snippet/browser/snippetController2';
 import { SuggestController } from 'vs/editor/contrib/suggest/browser/suggestController';
 import { MenuPreventer } from 'vs/workbench/contrib/codeEditor/browser/menuPreventer';
 import { SelectionClipboardContributionID } from 'vs/workbench/contrib/codeEditor/browser/selectionClipboard';
-import { TabCompletionController } from 'vs/workbench/contrib/snippets/browser/tabCompletion';
+// import { TabCompletionController } from 'vs/workbench/contrib/snippets/browser/tabCompletion';
 import { EditorExtensionsRegistry } from 'vs/editor/browser/editorExtensions';
 
 export function getSimpleEditorOptions(): IEditorOptions {
@@ -51,8 +51,8 @@ export function getSimpleCodeEditorWidgetOptions(): ICodeEditorWidgetOptions {
 			SelectionClipboardContributionID,
 			ContextMenuController.ID,
 			SuggestController.ID,
-			SnippetController2.ID,
-			TabCompletionController.ID,
+			// SnippetController2.ID,
+			// TabCompletionController.ID,
 		])
 	};
 }

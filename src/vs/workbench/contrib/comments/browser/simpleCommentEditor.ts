@@ -15,8 +15,8 @@ import { ICommandService } from 'vs/platform/commands/common/commands';
 import { MenuPreventer } from 'vs/workbench/contrib/codeEditor/browser/menuPreventer';
 import { ContextMenuController } from 'vs/editor/contrib/contextmenu/browser/contextmenu';
 import { SuggestController } from 'vs/editor/contrib/suggest/browser/suggestController';
-import { SnippetController2 } from 'vs/editor/contrib/snippet/browser/snippetController2';
-import { TabCompletionController } from 'vs/workbench/contrib/snippets/browser/tabCompletion';
+// import { SnippetController2 } from 'vs/editor/contrib/snippet/browser/snippetController2';
+// import { TabCompletionController } from 'vs/workbench/contrib/snippets/browser/tabCompletion';
 import { IThemeService } from 'vs/platform/theme/common/themeService';
 import { INotificationService } from 'vs/platform/notification/common/notification';
 import { IAccessibilityService } from 'vs/platform/accessibility/common/accessibility';
@@ -54,8 +54,8 @@ export class SimpleCommentEditor extends CodeEditorWidget {
 				{ id: MenuPreventer.ID, ctor: MenuPreventer },
 				{ id: ContextMenuController.ID, ctor: ContextMenuController },
 				{ id: SuggestController.ID, ctor: SuggestController },
-				{ id: SnippetController2.ID, ctor: SnippetController2 },
-				{ id: TabCompletionController.ID, ctor: TabCompletionController },
+				// { id: SnippetController2.ID, ctor: SnippetController2 },
+				// { id: TabCompletionController.ID, ctor: TabCompletionController },
 			]
 		};
 

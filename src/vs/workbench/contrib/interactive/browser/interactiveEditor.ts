@@ -46,8 +46,8 @@ import { MenuPreventer } from 'vs/workbench/contrib/codeEditor/browser/menuPreve
 import { SelectionClipboardContributionID } from 'vs/workbench/contrib/codeEditor/browser/selectionClipboard';
 import { ContextMenuController } from 'vs/editor/contrib/contextmenu/browser/contextmenu';
 import { SuggestController } from 'vs/editor/contrib/suggest/browser/suggestController';
-import { SnippetController2 } from 'vs/editor/contrib/snippet/browser/snippetController2';
-import { TabCompletionController } from 'vs/workbench/contrib/snippets/browser/tabCompletion';
+// import { SnippetController2 } from 'vs/editor/contrib/snippet/browser/snippetController2';
+// import { TabCompletionController } from 'vs/workbench/contrib/snippets/browser/tabCompletion';
 import { ModesHoverController } from 'vs/editor/contrib/hover/browser/hover';
 import { MarkerController } from 'vs/editor/contrib/gotoError/browser/gotoError';
 import { EditorInput } from 'vs/workbench/common/editor/editorInput';
@@ -368,8 +368,8 @@ export class InteractiveEditor extends EditorPane {
 					SelectionClipboardContributionID,
 					ContextMenuController.ID,
 					SuggestController.ID,
-					SnippetController2.ID,
-					TabCompletionController.ID,
+					// SnippetController2.ID,
+					// TabCompletionController.ID,
 					ModesHoverController.ID,
 					MarkerController.ID
 				])
