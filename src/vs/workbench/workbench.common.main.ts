@@ -331,7 +331,7 @@ import 'vs/workbench/contrib/codeActions/browser/codeActions.contribution';
 // import 'vs/workbench/contrib/timeline/browser/timeline.contribution';
 
 // Local History
-import 'vs/workbench/contrib/localHistory/browser/localHistory.contribution';
+// import 'vs/workbench/contrib/localHistory/browser/localHistory.contribution';
 
 // Workspace
 import 'vs/workbench/contrib/workspace/browser/workspace.contribution';
